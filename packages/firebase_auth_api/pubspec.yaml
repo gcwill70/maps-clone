@@ -1,0 +1,29 @@
+name: firebase_auth_api
+description: A new Flutter package project.
+version: 0.0.1
+publish_to: none
+
+environment:
+  sdk: ">=2.15.1 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  auth_api:
+    path: ../auth_api
+  crypto: ^3.0.1
+  firebase_auth: ^4.2.3
+  firebase_core_api:
+    path: ../firebase_core_api
+  flutter:
+    sdk: flutter
+  flutter_facebook_auth: ^4.1.2
+  google_sign_in: ^5.2.1
+  sign_in_with_apple: ^3.3.0
+  twitter_login: ^4.0.1
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter: null
