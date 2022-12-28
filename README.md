@@ -4,6 +4,13 @@ A Google Maps clone made with Flutter. Designed with a modular architecture to m
 # Platforms
 * iOS
 
+# Screenshots
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 29 20](https://user-images.githubusercontent.com/25019832/209843673-23e80b62-1ef0-4818-aecd-a50ab85cd7a3.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 29 57](https://user-images.githubusercontent.com/25019832/209843689-e3b98a51-f050-43e5-a3b0-88a397d2fbff.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 17](https://user-images.githubusercontent.com/25019832/209843704-4325ab92-531e-4e8e-ba8d-5d07cddb3a6d.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 22](https://user-images.githubusercontent.com/25019832/209843727-9f783b41-4a5e-42fe-9860-ef50ffef159a.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 27](https://user-images.githubusercontent.com/25019832/209843738-8e18a3e5-ba87-44ff-8741-e0971248f946.png)
+
 # Setup
 1. Setup location permissions by following steps [here](https://pub.dev/packages/location).
 2. Setup a Firebase project by following steps [here](https://firebase.google.com/docs/flutter/setup?platform=ios).
@@ -14,7 +21,8 @@ A Google Maps clone made with Flutter. Designed with a modular architecture to m
 # Feature List
 * Sign in With Google
 * Account storage in Firebase
-* Google Maps Integration
+* Google Maps Location Search
+* Google Maps Directions
 
 # Architecture
 The app uses the bootstrap design pattern along with a feature-oriented design (each subfolder under `lib/` represents a feature). Some features are simply used by others such as `nav` while others are visible to the end user. Each feature in `lib/*` contains a [barrel file](https://adrianfaciu.dev/posts/barrel-files/) with the same name as the feature (i.e. `lib/feature/feature.dart`).
