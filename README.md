@@ -5,11 +5,11 @@ A Google Maps clone made with Flutter. Designed with a modular architecture to m
 * iOS
 
 # Screenshots
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 29 20](https://user-images.githubusercontent.com/25019832/209843673-23e80b62-1ef0-4818-aecd-a50ab85cd7a3.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 29 57](https://user-images.githubusercontent.com/25019832/209843689-e3b98a51-f050-43e5-a3b0-88a397d2fbff.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 17](https://user-images.githubusercontent.com/25019832/209843704-4325ab92-531e-4e8e-ba8d-5d07cddb3a6d.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 22](https://user-images.githubusercontent.com/25019832/209843727-9f783b41-4a5e-42fe-9860-ef50ffef159a.png)
-![Simulator Screen Shot - iPhone 14 Pro - 2022-12-28 at 11 30 27](https://user-images.githubusercontent.com/25019832/209843738-8e18a3e5-ba87-44ff-8741-e0971248f946.png)
+<img src="https://user-images.githubusercontent.com/25019832/209843673-23e80b62-1ef0-4818-aecd-a50ab85cd7a3.png" width="200"/>
+<img src="https://user-images.githubusercontent.com/25019832/209843689-e3b98a51-f050-43e5-a3b0-88a397d2fbff.png" width="200"/>
+<img src="https://user-images.githubusercontent.com/25019832/209843704-4325ab92-531e-4e8e-ba8d-5d07cddb3a6d.png" width="200"/>
+<img src="https://user-images.githubusercontent.com/25019832/209843727-9f783b41-4a5e-42fe-9860-ef50ffef159a.png" width="200"/>
+<img src="https://user-images.githubusercontent.com/25019832/209843738-8e18a3e5-ba87-44ff-8741-e0971248f946.png" width="200"/>
 
 # Setup
 1. Setup location permissions by following steps [here](https://pub.dev/packages/location).
