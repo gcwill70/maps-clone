@@ -50,13 +50,13 @@ This feature provides an entrypoint for the app and handles bootstrapping of dep
 Provides a home page for the app which essentially is just the `HomeMapView` and a navigation drawer.
 
 ### home_map
-Contains a map view for the homepage that shows vehicles in the area.
+Contains a map view for the homepage.
 
 ### location
 Provides a device location using the third party [location](https://pub.dev/packages/location) package.
 
 ### location_search
-Allows the user to search for locations using the Google Places API. Currently is not used but should be connected to the `parking_search` feature to allow users to first search for a location, then view nearby parking spots.
+Allows the user to search for locations using the Google Places API.
 
 ### map
 Contains `MapView` that uses the `google_maps_flutter` package to display a map. This is used by the `home_map` feature.
