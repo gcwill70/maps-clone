@@ -2,6 +2,7 @@ import 'package:auth_repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:maps_clone/nav/nav.dart';
 import 'package:profile_repository/profile_repository.dart';
 import 'package:maps_clone/assets/assets.dart';
 import 'package:maps_clone/auth/auth.dart';
@@ -50,8 +51,15 @@ class AppView extends StatelessWidget {
           ),
         ),
         BlocProvider(
-            create: (context) =>
-                LocationBloc()..add(LocationPermissionRequested())),
+          create: (context) =>
+              LocationBloc()..add(LocationPermissionRequested()),
+        ),
+        BlocProvider(
+          create: (context) => NavBloc(
+            apiKey: RepositoryProvider.of<AssetsRepository>(context)
+                .mapEnv['GOOGLE_MAPS_KEY']!,
+          ),
+        ),
       ],
       child: MaterialApp(
         theme: AppTheme.light,

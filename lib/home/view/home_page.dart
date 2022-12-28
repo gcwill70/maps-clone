@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maps_clone/home_map/home_map.dart';
 import 'package:maps_clone/map/map.dart';
+import 'package:maps_clone/nav/view/nav_form.dart';
 import 'package:maps_clone/profile/profile.dart';
 
 class HomePage extends StatelessWidget {
@@ -12,6 +13,11 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(title: const Text('maps-clone')),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.directions_outlined),
+        onPressed: () => Navigator.push(context, NavForm.route()),
+      ),
       drawer: Drawer(
         child: Column(
           children: [

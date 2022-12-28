@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:common_api/common_api.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-import 'package:maps_clone/core/core.dart';
 
 part 'nav_event.dart';
 part 'nav_state.dart';
@@ -18,9 +17,9 @@ class NavBloc extends Bloc<NavEvent, NavState> {
       emit(state.copyWith(end: event.end, points: null));
     }));
     on<NavGetRouteEvent>((event, emit) async {
-      if (state.status == NavStatus.idle) {
+      if (state.status != NavStatus.calculating) {
         try {
-          // TODO: change to use google_maps_webservice
+          // TODO: change to use GoogleMapsDirections
           emit(state.copyWith(status: NavStatus.calculating));
           PolylinePoints points = PolylinePoints();
           PolylineResult result = await points.getRouteBetweenCoordinates(

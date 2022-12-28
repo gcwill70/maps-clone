@@ -21,11 +21,7 @@ class AppTheme {
     return ThemeData(
       primaryColor: const Color(0xFFFF9900),
       backgroundColor: const Color(0xFF323234),
-      textTheme: const TextTheme(
-        button: TextStyle(
-          overflow: TextOverflow.fade,
-        ),
-      ),
+      textTheme: Typography().white,
       textSelectionTheme: const TextSelectionThemeData(
         cursorColor: Colors.white,
       ),

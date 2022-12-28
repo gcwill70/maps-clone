@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_webservice/places.dart';
+import 'package:maps_clone/assets/assets.dart';
 
 import '../bloc/location_search_bloc.dart';
 
 class LocationSearchView extends StatefulWidget {
   const LocationSearchView({Key? key}) : super(key: key);
 
-  static Route<void> route(LocationSearchBloc lsBloc) {
+  static Route<void> route({LocationSearchBloc? lsBloc}) {
     return MaterialPageRoute(
       fullscreenDialog: true,
-      builder: (context) => BlocProvider.value(
-        value: lsBloc,
-        child: const LocationSearchView(),
-      ),
+      builder: (context) {
+        return BlocProvider.value(
+          value: lsBloc ??
+              LocationSearchBloc(
+                apiKey: RepositoryProvider.of<AssetsRepository>(context)
+                    .mapEnv['GOOGLE_MAPS_KEY']!,
+              ),
+          child: const LocationSearchView(),
+        );
+      },
     );
   }
 
@@ -29,13 +36,13 @@ class _LocationSearchViewState extends State<LocationSearchView> {
     final bloc = BlocProvider.of<LocationSearchBloc>(context);
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.only(right: 20, left: 20, top: 20),
+        padding: const EdgeInsets.only(right: 20, left: 20, top: 50),
         child: BlocListener<LocationSearchBloc, LocationSearchState>(
           listener: (context, state) {
             if (state is LocationSearchPredictions) {
               setState(() => predictions = state.predictions);
             } else if (state is LocationSearchDetails) {
-              Navigator.pop(context);
+              Navigator.pop(context, state);
             } else if (state is LocationSearchError) {
               final scaffold = ScaffoldMessenger.of(context);
               scaffold.clearSnackBars();

@@ -8,6 +8,7 @@ import 'package:firebase_core_api/firebase_core_api.dart';
 import 'package:firebase_profile_api/firebase_profile_api.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -26,9 +27,8 @@ Future<void> bootstrap() async {
   await Get.putAsync(() async {
     AssetsRepository repo = AssetsRepository();
     // env
-    repo.mapEnv.forEach((key, value) async {
-      repo.mapEnv[key] = await rootBundle.loadString(key);
-    });
+    await dotenv.load();
+    repo.mapEnv.addAll(dotenv.env);
     // bitmap descriptors
     repo.bitmapDescriptors.forEach((key, value) async {
       repo.bitmapDescriptors[key] = await BitmapDescriptor.fromAssetImage(
